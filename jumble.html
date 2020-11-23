@@ -1,0 +1,92 @@
+<html>
+    <title></title>
+    <head><link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"></head>
+    <style>
+         div{
+            background-image: url("bl.jpg");
+        }
+        
+        .round{
+            width:70px;
+            height:70px;
+            border-radius:40%;
+            border:1px solid;
+            background:palegreen;
+           
+            
+        }
+        .btn-box{
+            color: brown        }
+        h1{
+            text-align:center;
+            font-family: 'Press Start 2P', cursive;
+            padding:50px;
+        }
+        .flex{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-family: 'Press Start 2P', cursive;
+            padding:15px;
+           
+            }
+        #input{
+            font-size:30px;
+        }
+        .submit-box{
+            padding:90px;
+            
+        }
+      
+    </style>
+    <body>
+        <script>
+            window.onload = function(){
+           let inputBox=document.querySelector("input")
+           let submitBtn=document.querySelector(".btn")
+           let originalWorld="FOOL"
+           submitBtn.onclick=function()
+           {
+               let guess=inputBox.value
+               if(guess==originalWorld)
+               alert("correct")
+               alert("wrong")
+    
+           }
+            }
+        </script>
+        
+        <div class="container">
+            <div class="text">
+                <h1> Word Game</h1>
+            </div>
+            <div class="word-box flex">
+                <div class="round flex">
+                    F
+                </div>
+                <div class="round flex">
+                    L
+                </div>
+                <div class="round flex">
+                    O
+                </div>
+                <div class="round flex">
+                    O
+                </div>
+         </div>
+                <div>
+                     <div class="submit-box flex">
+                         <input class="w-100" id="input">
+                     </div>
+                     <div class="btn-box flex">
+                     <div class="btn">submit</div>
+                    </div>
+               </div>
+     </div>
+   
+     
+    </body>
+   
+
+</html>
