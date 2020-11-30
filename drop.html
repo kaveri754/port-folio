@@ -1,0 +1,98 @@
+<html>
+    <title></title>
+    <head></head>
+    <style>
+         .container{
+            width:600px;
+            height:100vh;
+            border:solid brown 2px;
+            background-color:peachpuff ;
+        }
+       .center{
+           align-items:center;
+           justify-content: center;
+       }
+       .relative{
+           position:relative;
+       }
+        .flex{
+            display:flex;
+           
+            }
+            .text{
+                justify-content: center;
+                align-items:center;
+                display:flex;
+                flex-direction: column;
+                transform:rotate(45deg);
+            }
+        .drop {
+            width:60px;
+            height:60px;
+            background-color:seagreen;
+            transform:rotate(-45deg);
+            border-radius:50%;
+            border-top-right-radius:0;
+            position:absolute;
+            border:solid 5px papayawhip;
+             }
+            .content{
+                text-align: center;
+            
+        }
+    </style>
+    <body>
+        <main class="flex center">
+            <div class="container relative">
+             
+            </div>
+         </main>
+    <script>
+        window.onload=function(){
+            
+            function makeExpression(){
+                let num1=Math.floor(Math.random()*100)
+                let num2=Math.floor(Math.random()*100)
+                let operators=['*','+','-','/']
+                let index=Math.floor(Math.random()*10)%operators.length
+                
+                return `<div class="text">
+                        <span>${num1}</span> <span>${operators[index]}</span> <span>${num2}</span></div>`
+            }
+            
+        function makeDrop(parent)
+        {
+            let left=Math.floor(Math.random()*1000)%500
+            let div=document.createElement("div")
+            div.classList.add("drop");
+            div.style.left=`${left}px`;
+            div.innerHTML=makeExpression()
+            parent.appendChild(div)
+           
+            return{
+                left:left,
+                top:-10,
+                move(){
+                    div.style.top=`${this.top}px`;
+                    this.top++;
+                 },
+                 destroy(){
+                     this.left=null;
+                     this.div=null;
+                 }
+            }
+        }
+        let container=document.querySelector(".container")
+        let drops=[]
+        for(let i=0;i<5;i++)
+        setTimeout(()=>drops.push(makeDrop(container)),1000*(i+1))
+        function move(){
+            for(let drop of drops)
+            drop.move()
+        }
+        setInterval(move,40)
+        }
+        
+    </script>
+    </body>
+</html>
