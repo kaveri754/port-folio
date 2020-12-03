@@ -7,14 +7,34 @@
 
 <style>
     .box{
-        width: 500px;
+        width: 1323px;
         height:620px;
         background-color: aqua;
     }
+    .drop{
+        background: darkcyan;
+        padding: 10px;
+        
+    }
+    .col-60{
+        width:60%;
+    }
+    
 </style>
 </head>
 <body>
-    <div class="box"></div>
+    <div class="drop"><label for="pet-select">Choose a country</label>
+            <select name="pets" id="pet-select" > 
+            <option value="" col-60></option>
+            <option value="dog">India</option>
+            <option value="cat">Africa</option>
+            <option value="hamster">America</option>
+            </select> </div>
+
+
+
+            <div class="box"></div>
+   
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <div class="data"></div>
     <script>
