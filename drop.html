@@ -5,9 +5,14 @@
          .container{
             width:600px;
             height:100vh;
-            border:solid brown 2px;
+            
             background-color:peachpuff ;
         }
+        .img{
+            width:600px;
+            height:100vh;
+        }
+       
        .center{
            align-items:center;
            justify-content: center;
@@ -29,7 +34,7 @@
         .drop {
             width:60px;
             height:60px;
-            background-color:seagreen;
+            background-color:rgb(41, 216, 187);
             transform:rotate(-45deg);
             border-radius:50%;
             border-top-right-radius:0;
@@ -40,25 +45,53 @@
                 text-align: center;
             
         }
+
     </style>
     <body>
         <main class="flex center">
-            <div class="container relative">
+            <div class="container relative">    
+                <img src="wat.jpg" class="img">  </div>
+               <div> <input type="text" autofocus></div>
              
-            </div>
+          
+            
          </main>
     <script>
         window.onload=function(){
+
+            
+            document.addEventListener("keydown",updateDrops);
+            let inputBox=document.querySelector("input")
+            function updateDrops(e){
+                let guess=inputBox.value;
+                if(e.keyCode==13){
+                    drops.filter(drop=>{
+                        console.log(guess+" "+drop.ans)
+                        if(drop.ans==guess){
+                            drop.destroy()
+                            return false;
+                        }
+                        return true;
+                    })
+                    guess=0;
+                    inputBox.value="";
+                }
+                console.log("press key");
+                console.log(e);
+                }
             
             function makeExpression(){
                 let num1=Math.floor(Math.random()*100)
                 let num2=Math.floor(Math.random()*100)
-                let operators=['*','+','-','/']
+                let operators=['+','-']
                 let index=Math.floor(Math.random()*10)%operators.length
                 
-                return `<div class="text">
-                        <span>${num1}</span> <span>${operators[index]}</span> <span>${num2}</span></div>`
+                return {html:`<div class="text">
+                        <span>${num1}</span> <span>${operators[index]}</span> <span>${num2}</span></div>`,
+                        ans:eval(num1+operators[index]+num2)
             }
+            }
+           
             
         function makeDrop(parent)
         {
@@ -66,26 +99,31 @@
             let div=document.createElement("div")
             div.classList.add("drop");
             div.style.left=`${left}px`;
-            div.innerHTML=makeExpression()
+            let obj=makeExpression()
+            div.innerHTML=obj.html
             parent.appendChild(div)
            
             return{
+                ans:obj.ans,
                 left:left,
                 top:-10,
-                move(){
+                move()
+                {
                     div.style.top=`${this.top}px`;
                     this.top++;
                  },
-                 destroy(){
+                 destroy()
+                 {
                      this.left=null;
-                     this.div=null;
+                     div.style.display="none";
                  }
             }
         }
         let container=document.querySelector(".container")
         let drops=[]
-        for(let i=0;i<5;i++)
+        for(let i=0;i<5;i++){
         setTimeout(()=>drops.push(makeDrop(container)),1000*(i+1))
+        }
         function move(){
             for(let drop of drops)
             drop.move()
