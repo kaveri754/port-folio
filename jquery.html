@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    .box{
+        width: 500px;
+        height:620px;
+        background-color: aqua;
+    }
+</style>
+</head>
+<body>
+    <div class="box"></div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <div class="data"></div>
+    <script>
+    $(document).ready(function()
+    {
+    let dataBox=$(".box")
+   
+    $.get("https://api.covid19api.com/summary",function(dataObj)
+    {
+    let globalData=dataObj.Global
+    let html=""
+             for(let key in globalData)
+             {
+                 html +=`<div class="inner.data">
+                 <h3>${key}</h3>
+                 <h1>${globalData[key]}</h1>
+                 </div>`
+             }
+    dataBox.html(html);
+})
+    })
+</script>
+</body>
+</html>
