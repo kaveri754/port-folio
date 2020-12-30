@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap" rel="stylesheet">
+</head>
+<style>
+    h1{
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 23px;;
+    }
+   .flex{
+       display: flex;
+   }
+   .bg-image {
+background-image: url("quizz.jpg");
+background-color: #cccccc;
+height: 641px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+ body{
+  background-color:#66D0FF;
+}
+.cloud{ 
+   margin-top:70px;
+   width:350px;
+   height:120px;
+   background:#ECEFF1;
+   box-shadow: 10px 10px rgba(0,0,0,0.2);
+   border-radius:100px;
+   animation: bounce 0.9s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 50px, 0); }
+}
+.cloud::after, .cloud::before{
+    content:"";
+    position:relative;
+    display:inline-block;
+    background:inherit;
+    border-radius:inherit;
+}
+
+.cloud::before{
+    width:180px;
+    height:180px;
+    top: -30px;
+    left:85px;
+}
+.cloud1{ 
+   margin-top:70px;
+   width:150px;
+   height:50px;
+   background:#ECEFF1;
+   box-shadow: 10px 10px rgba(0,0,0,0.2);
+   border-radius:100px;
+   position: absolute;
+   left:400px;
+   animation: bounce 0.9s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+        
+     
+}
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 50px, 0); }
+}
+.cloud1::after, .cloud1::before{
+    content:"";
+    position:relative;
+    display:inline-block;
+    background:inherit;
+    border-radius:inherit;
+  
+}
+
+.cloud1::before{
+    width:180px;
+    height:180px;
+    top: -60px;
+    left:85px;
+  
+   
+}
+.cloud2{ 
+   margin-top:70px;
+   width:350px;
+   height:120px;
+   background:#ECEFF1;
+   box-shadow: 10px 10px rgba(0,0,0,0.2);
+   border-radius:100px;
+   position: absolute;
+   left:250px;
+   top:210px;
+   animation: bounce 0.9s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+        
+     
+}
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 50px, 0); }
+}
+
+
+.cloud2::before{
+    width:180px;
+    height:180px;
+    top: -60px;
+    left:25px;
+  
+   
+}
+.question{
+position: absolute;
+top:50px;
+left:70px;
+}
+.question1{
+position: absolute;
+top:1px;
+left:140px;
+
+}
+.question2{
+position: absolute;
+top:50px;
+left:60px;
+
+}
+.cloud3{
+    border-radius: 50%;
+    border:solid 1px #ECEFF1;
+    background-color: #ECEFF1;
+    height:150px;
+    width:150px;
+    position: absolute;
+    left:690px;
+    animation: bounce 0.9s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 50px, 0); }
+}
+
+
+
+.question3{
+    position: absolute;
+top:40px;
+left:35px;
+}
+.cloud4{
+    border-radius: 30%;
+    border:solid 1px #ECEFF1;
+    background-color: #ECEFF1;
+    height:150px;
+    width:150px;
+    position: absolute;
+    bottom:150px;
+    animation: bounce 0.9s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 50px, 0); }
+}
+
+.question4{
+position: absolute;
+top:40px;
+left:40px;
+
+}
+.cloud5{
+    border-radius: -70%;
+    border:solid 1px #ECEFF1;
+    background-color: #ECEFF1;
+    height:150px;
+    width:150px;
+    position: absolute;
+    bottom:150px;
+    left:650px;
+    animation: bounce 0.9s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 50px, 0); }
+}
+
+.question5{
+position: absolute;
+top:40px;
+left:26px;
+
+}
+.cloud6{
+    border-radius: 100%;
+    border:solid 1px #ECEFF1;
+    background-color: #ECEFF1;
+    height:150px;
+    width:150px;
+    position: absolute;
+    bottom:150px;
+    left:850px;
+    animation: bounce 0.9s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 50px, 0); }
+}
+
+.question6{
+position: absolute;
+top:40px;
+left:26px;
+
+}
+.cloud7{
+    border-radius: 50%;
+    border:solid 1px #ECEFF1;
+    background-color: #ECEFF1;
+    height:90px;
+    width:150px;
+    position: absolute;
+    bottom:150px;
+    left:1100px;
+    animation: bounce 0.9s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 50px, 0); }
+}
+
+.question7{
+position: absolute;
+top:30px;
+left:26px;
+
+}
+
+.img5 {
+background-image: url("ans6.jpg");
+background-color: #cccccc;
+height: 250px;
+width:420px;
+left:900px;
+bottom:110px;
+
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+.text{
+ float:right;
+ padding-top:100px;
+ padding-right:120px;
+ height:250px;
+ 
+}
+button{
+width:20px;
+height:20px;
+}
+.btn-box{
+            color: brown        }
+</style>
+<body>
+    <div class="bg-image">
+    <div class="flex">
+    <div class="cloud"><h1><div class="question ">what is your name?</div></div>
+    <div class="cloud1"><h1><div class="question1 ">what is your father name?</div></div>
+    <div class="cloud2"><h1><div class="question2 ">what is your Mother name?</div></div>
+    <div class="cloud3"><h1><div class="question3 ">what is your petname?</div></div>
+    <div class="cloud4"><h1><div class="question4 ">which is your favourite colour?</div></div>
+    <div class="cloud5"><h1><div class="question5 ">which is our national animal?</div></div>
+        <div class="cloud6"><h1><div class="question6">which is our national bird?</div></div>
+            <div class="cloud7"><h1><div class="question7 ">Which is our state?</div></div>
+</div>
+
+<div class="img5" ><div class="text" ><input type="text" autofocus style="width: 200px;height: 70px;" ></div>
+
+</div>
+<div>
+  <div class="submit-box flex">
+      <input class="w-100" id="input">
+  </div>
+  <div class="btn-box flex">
+  <div class="btn">submit</div>
+ </div>
+</div>
+
+<script>
+  funtion ans(){
+    var name = window.prompt("Enter your name: ");
+alert("Your name is " + name);
+
+  }
+</script></body>
+
+</html>
