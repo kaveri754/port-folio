@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Rancho&family=Sriracha&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<style>
+h1{
+    font-family: 'Aclonica', sans-serif;
+    font-family: 'Rancho', cursive;
+    font-family: 'Sriracha', cursive;
+}
+@media print {
+    .hidden-print,
+    
+    .hidden-print * {
+        display: none !important;
+    }
+}
+
+.bg{
+            background-image: url("sho.jpg");
+            background-size: cover;
+            position: relative;
+            height: 100vh;
+            width: 100%;
+     }
+</style>
+<body>
+  <div class="bg">
+    <div class="pl-96 pr-96 ">
+        <div class="text-center pt-12 text bold text-3xl text-blue-300 underline"><h1>Reciept</div>
+  <div class="pt-9 text-center  pb-5 ">Kurti
+<input type="text"class="text-center border-2"  placeholder="kurti" id="kurti">
+  </div>
+ 
+  <div class="pt-5 pb-5 text-center ">top
+    <input type="text" class="text-center border-2" placeholder="top" id="top">
+      </div>
+      
+      <div class="pt-5 pb-5 text-center ">jeans
+        <input type="text" class="text-center border-2" placeholder="jeans" id="jeans">
+          </div>
+          
+          <div class="pt-5 pb-5  text-center ">gown
+            <input type="text" class="text-center border-2" placeholder="gown" id="gown">
+              </div>
+             
+      <div class="pt-5 pb-5 text-center ">
+        <input type="button" class="hidden-print bg-pink-400 border-2 w-20 border-black" id="btnPrint"  value="total" onclick="Grand()">
+          </div>
+          </div></div>
+          <script>
+              function Grand(){
+               
+                  let kurti=document.getElementById('kurti').value;
+                  let top=document.getElementById('top').value;
+                  let jeans=document.getElementById('jeans').value;
+                  let gown=document.getElementById('gown').value;
+                  let total= parseInt(kurti)+parseInt(top)+parseInt(jeans)+parseInt(gown);
+                  
+       alert(total);
+              }
+              
+    const $btnPrint = document.querySelector("#btnPrint");
+    $btnPrint.addEventListener("click", () => {
+        window.print();
+    });
+           
+          </script>
+</body>
+</html>
